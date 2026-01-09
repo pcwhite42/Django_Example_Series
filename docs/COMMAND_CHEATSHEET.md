@@ -1,7 +1,8 @@
 <!-- REF-HEADER-START -->
 Points To:
-- README.md
+- GettingStartedHowTo.md
 Referenced By:
+- GettingStartedHowTo.md
 - README.md
 - docs\GIT_WORKFLOW.md
 <!-- REF-HEADER-END -->
@@ -16,9 +17,12 @@ Referenced By:
 
 
 
+
+
+
 # Command Cheatsheet
 # FILE PURPOSE: Quick reference for the most common commands used throughout the tutorials.
-# NEXT: Keep this tab open while working through the phases in README.md See ::--:: README.md
+# NEXT: Keep this tab open while working through the phases in GettingStartedHowTo.md See ::--:: GettingStartedHowTo.md
 # RUN FROM: A terminal pointed at the project folder (where `manage.py` lives) after activating your virtual environment and setting `DJANGO_SECRET_KEY` for your shell.
 # WHY: Virtualenv keeps dependencies isolated; setting the secret key is required before Django will start.
 # Points To: (auto-managed by script) 

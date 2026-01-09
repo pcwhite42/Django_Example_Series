@@ -1,16 +1,19 @@
 <!-- REF-HEADER-START -->
 Points To:
-- README.md
+- GettingStartedHowTo.md
 - docs/BEGINNER_GLOSSARY.md
 - docs/TROUBLESHOOTING.md
 - docs/TUTORIAL_SERIES.md
 Referenced By:
-- README.md
+- GettingStartedHowTo.md
 <!-- REF-HEADER-END -->
 
+
+
+
 # FILE PURPOSE: Provide bite-sized Django + pandas examples that absolute beginners can build after finishing the base tutorial.
-# CAME FROM: README.md -> Add-on resources can point here for more practice ideas.
-# NEXT: After trying an example, jot notes in your own journal to reinforce what you learned. See ::--:: README.md for the main flow.
+# CAME FROM: GettingStartedHowTo.md -> Add-on resources can point here for more practice ideas.
+# NEXT: After trying an example, jot notes in your own journal to reinforce what you learned. See ::--:: GettingStartedHowTo.md for the main flow.
 
 ## Before You Start (applies to every example)
 - Activate your virtual environment and start the dev server (`python manage.py runserver`); leave it running so Django auto-reloads.

@@ -5,12 +5,15 @@ Points To:
 - docs/TUTORIAL_2_TREND_CHART.md
 - docs/TUTORIAL_3_REPORTING_WIZARD.md
 Referenced By:
-- README.md
+- GettingStartedHowTo.md
 - docs\BEGINNER_EXAMPLES.md
 <!-- REF-HEADER-END -->
 
+
+
+
 # FILE PURPOSE: Index of tutorials; start here to choose a guided build.
-# CAME FROM: README.md -> Tutorials link points here.
+# CAME FROM: GettingStartedHowTo.md -> Tutorials link points here.
 # NEXT: Pick a tutorial below and follow its dedicated file.
 
 

@@ -13,6 +13,9 @@ Referenced By:
 
 
 
+
+
+
 # FILE PURPOSE: Establish collaboration habits for student teams working through this tutorial.
 # CAME FROM: ENHANCEMENTS.md -> provides norms once learners start pairing or opening PRs.
 # NEXT: Review this document during your first team sync and adapt it to your workflow.
@@ -63,7 +66,7 @@ Rotate roles frequently so everyone practices each skill.
 
 ## Staying Beginner-Friendly
 - Whenever you add a feature or automation, update:
-  - `README.md` -> “Learn more” section.
+  - `GettingStartedHowTo.md` -> “Learn more” section.
   - `docs/ONBOARDING_PORTAL.md` -> appropriate phase.
   - `docs/TROUBLESHOOTING.md` -> new failure modes and fixes.
 - Keep code comments clear, avoid jargon, and link to docs when referencing advanced concepts.

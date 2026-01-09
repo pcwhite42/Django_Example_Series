@@ -1,9 +1,12 @@
 <!-- REF-HEADER-START -->
 Points To:
 Referenced By:
-- README.md
+- GettingStartedHowTo.md
 - docs\TUTORIAL_SERIES.md
 <!-- REF-HEADER-END -->
+
+
+
 
 # FILE PURPOSE: Sketch intermediate-level paths for learners who finished the beginner dashboard and want the next challenge.
 # CAME FROM: docs/TUTORIAL_SERIES.md -> after finishing the examples, come here to expand your skills.

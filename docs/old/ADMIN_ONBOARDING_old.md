@@ -26,6 +26,9 @@ Referenced By:
 
 
 
+
+
+
 # FILE PURPOSE: Admin onboarding checklist so beginners can get into /admin quickly.
 # CAME FROM: dashboard/admin.py -> registering ExampleRecord points here for the setup commands.
 # NEXT: After finishing these basics, open WALKTHROUGH.txt for the full project tour (created later in this tutorial).

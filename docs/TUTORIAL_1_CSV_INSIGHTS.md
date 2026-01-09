@@ -8,6 +8,9 @@ Referenced By:
 
 
 
+
+
+
 # Tutorial 1: Build a CSV Insights Dashboard
 # FILE PURPOSE: Teach you—step by step—how to show your own CSV on `/`, verify `/about/`, and use `/admin/`.
 # GOAL (DONE WHEN): Your custom CSV renders on `/`, `/about/` loads, and `/admin/` works with a superuser you created. You can describe how URL -> view -> template works using your own code.

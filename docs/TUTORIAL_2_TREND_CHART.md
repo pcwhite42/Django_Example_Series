@@ -7,6 +7,9 @@ Referenced By:
 
 
 
+
+
+
 # Tutorial 2: Add a Trend Chart Using pandas + Templates
 # FILE PURPOSE: Show how to compute chart data in pandas and render it in a template without extra libraries.
 # GOAL (DONE WHEN): `/` renders your chart data (e.g., inline bars or simple chart) alongside the table/summary, with breadcrumbs intact.

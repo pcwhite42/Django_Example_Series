@@ -1,7 +1,10 @@
-# <!-- REF-HEADER-START -->
+# # REF-HEADER-START
 # Points To:
 # Referenced By:
-# <!-- REF-HEADER-END -->
+# REF-HEADER-END
+
+
+
 
 # FILE PURPOSE: Lock the tutorial's tested dependency versions for easy installation.
 Django==5.2.7

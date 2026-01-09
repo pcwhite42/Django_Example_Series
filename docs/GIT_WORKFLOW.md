@@ -1,8 +1,9 @@
 <!-- REF-HEADER-START -->
 Points To:
-- README.md
+- GettingStartedHowTo.md
 - docs/COMMAND_CHEATSHEET.md
 Referenced By:
+- GettingStartedHowTo.md
 - README.md
 <!-- REF-HEADER-END -->
 
@@ -16,8 +17,11 @@ Referenced By:
 
 
 
+
+
+
 # FILE PURPOSE: Teach Git concepts (branching, collaboration, best practices) to beginners working on this tutorial.
-# CAME FROM: README.md -> add a "Git basics" reference once you are ready to collaborate. See ::--:: README.md for the main flow.
+# CAME FROM: GettingStartedHowTo.md -> add a "Git basics" reference once you are ready to collaborate. See ::--:: GettingStartedHowTo.md for the main flow.
 # NEXT: Try the commands in your own clone; jot lessons learned in BUILD_LOG.md or a personal notes file. See ::--:: docs/COMMAND_CHEATSHEET.md for command reminders.
 
 ## What is Git and Why Branches Matter

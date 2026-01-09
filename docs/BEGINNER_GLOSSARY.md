@@ -1,8 +1,8 @@
 <!-- REF-HEADER-START -->
 Points To:
-- README.md
+- GettingStartedHowTo.md
 Referenced By:
-- README.md
+- GettingStartedHowTo.md
 - docs\BEGINNER_EXAMPLES.md
 <!-- REF-HEADER-END -->
 
@@ -16,9 +16,12 @@ Referenced By:
 
 
 
+
+
+
 # FILE PURPOSE: Plain-language glossary for the most common Django + pandas terms in this tutorial.
-# CAME FROM: README.md quick index points here to help brand-new learners.
-# NEXT: Skim this whenever you encounter an unfamiliar term; update it as the project grows. See ::--:: README.md for the main flow.
+# CAME FROM: GettingStartedHowTo.md quick index points here to help brand-new learners.
+# NEXT: Skim this whenever you encounter an unfamiliar term; update it as the project grows. See ::--:: GettingStartedHowTo.md for the main flow.
 
 - **View**:-------------------------A Python function that receives a request and returns a response (HTML, CSV, etc.).
 - **URLconf (urls.py)**:------------The map that connects URL patterns to view functions.

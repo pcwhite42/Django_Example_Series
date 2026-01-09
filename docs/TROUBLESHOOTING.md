@@ -1,8 +1,9 @@
 <!-- REF-HEADER-START -->
 Points To:
-- README.md
+- GettingStartedHowTo.md
 - docs/MIGRATIONS_CHECKLIST.md
 Referenced By:
+- GettingStartedHowTo.md
 - README.md
 - docs\BEGINNER_EXAMPLES.md
 - docs\MIGRATIONS_CHECKLIST.md
@@ -18,9 +19,12 @@ Referenced By:
 
 
 
+
+
+
 # FILE PURPOSE: Help beginners diagnose common setup errors without leaving the repo.
-# CAME FROM: README.md -> If stuck, check here.
-# NEXT: When you fix an issue, add a note to BUILD_LOG.md or your personal journal so you remember what worked. See ::--:: README.md for the main flow.
+# CAME FROM: GettingStartedHowTo.md -> If stuck, check here.
+# NEXT: When you fix an issue, add a note to BUILD_LOG.md or your personal journal so you remember what worked. See ::--:: GettingStartedHowTo.md for the main flow.
 
 
 ## Secret Key or Environment Variable Errors

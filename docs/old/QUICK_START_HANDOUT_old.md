@@ -26,6 +26,9 @@ Referenced By:
 
 
 
+
+
+
 # Quick Start Handout (Give This to Newcomers)
 # FILE PURPOSE: One-page starter that tells beginners exactly which file to open first, what each key file does, and how to get familiar with the database.
 # CAME FROM: README.md and docs/ONBOARDING_PORTAL.md -> this handout compresses their "start here" guidance into a single page.
