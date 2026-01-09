@@ -1,0 +1,49 @@
+{# FILE PURPOSE: HTML template that renders the dashboard page with CSV table and summary stats. #}
+{# TAG: load static allows us to reference CSS files placed in dashboard/static. #}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Beginner Django Dashboard</title>
+    {# TAG: static resolves the URL for our CSS file provided by STATICFILES_DIRS. #}
+    <!-- # NEXT: open dashboard/static/dashboard/styles.css to study the matching styles. -->
+    <link rel="stylesheet" href="{% static 'dashboard/styles.css' %}" />
+  </head>
+  <body>
+    <header>
+      <h1>CSV Dashboard</h1>
+      {# CONTEXT: csv_name comes from dashboard/views.py context so learners see which file was loaded. #}
+      <p>Now viewing data from <strong>{{ csv_name }}</strong>.</p>
+      {# CONTEXT: row_count shows how many rows pandas loaded; computed in the view. #}
+      <p>Total rows loaded: {{ row_count }}</p>
+      <nav>
+        {# BREADCRUMB: Link hits dashboard/urls.py -> about route -> dashboard/views.py:about. #}
+        <a href="{% url 'dashboard:about' %}">About this tutorial</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Full Data Table</h2>
+        {# CONTEXT: table_html already contains table markup created with pandas.to_html(index=False). #}
+        {# SAFETY: |safe skips Django's escaping - only use it for sanitized or trusted CSV sources to avoid XSS. #}
+        {{ table_html|safe }}
+      </section>
+
+      <section>
+        <h2>Summary Statistics</h2>
+        {# CONTEXT: summary_html holds the describe() output; |safe is acceptable here because we generated it on the server. #}
+        {{ summary_html|safe }}
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Built with Django and pandas.
+        {# BREADCRUMB: remind learners where context originated. #}
+        <!-- # CAME FROM: dashboard/views.py -> home() renders this template. -->
+      </p>
+    </footer>
+  </body>
+</html>
