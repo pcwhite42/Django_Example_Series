@@ -115,17 +115,32 @@ Referenced By:
 - Tests anytime: `python manage.py test dashboard` to catch regressions early.
 - Need more ideas: see `docs/ENHANCEMENT_ROADMAP.md`.
 
-## 8) Using team assets (templates/CSS/components)
+## 8) Git workflow (branch-first, beginner friendly)
+- Why: working on your own branch keeps `main` clean and makes reviews safer.
+- Check where you are: `git status` (it prints your current branch at the top).
+- Create your own branch (do this before edits):
+  - `git checkout -b your-name/short-feature`
+  - Example: `git checkout -b paul/add-readme-notes`
+- Save your changes, then stage + commit:
+  - `git add -A`
+  - `git commit -m "Short description of the change"`
+- Push your branch to GitHub:
+  - `git push -u origin your-name/short-feature`
+- On GitHub, open a Pull Request to merge into `main`.
+- If you need to switch back later: `git checkout main`.
+- For a longer walkthrough, See ::--:: docs/GIT_WORKFLOW.md.
+
+## 9) Using team assets (templates/CSS/components)
 - Drop shared files into `team_base_assets/`.
 - To try them immediately: copy CSS into `dashboard/static/dashboard/`; copy base templates into `dashboard/templates/dashboard/`.
-- How to "use": Put the following: `{% extends "dashboard/base.html" %}`: at the very top of a template file so Django knows to inherit the shared layout, then wrap your page content in `{% block content %}...{% endblock %}` so it fills the base template's placeholders.
+- How to "use": Put `{% extends "dashboard/base.html" %}` at the very top of a template file so Django knows to inherit the shared layout, then wrap your page content in `{% block content %}...{% endblock %}` so it fills the base template's placeholders.
 - Add `{% load static %}` near the top and include `<link href="{% static 'dashboard/styles.css' %}" ...>` so the CSS loads on every page.
 - Remember: Example 7 (Template Inheritance) in See ::--:: docs/BEGINNER_EXAMPLES.md covers inheritance. 
 
-## 9) If you’re stuck
+## 10) If you’re stuck
 - Re-check: virtualenv active? `DJANGO_SECRET_KEY` set in this terminal? Commands run from the project folder?
 - Run smoke tests: `python manage.py test dashboard`.
 - Read `docs/TROUBLESHOOTING.md` for common fixes.
 - Ask for help with error messages and the steps you ran.
 
-## 10) ALWAYS REMEMBER: Jake's Hair Sucks
+## 11) ALWAYS REMEMBER: Jake's Hair Sucks

@@ -110,3 +110,5 @@ Referenced By:
 - [x] Step 79: Merge remote main history to resolve non-fast-forward (start: 2026-01-09T15:12:53.1795088-06:00, end: 2026-01-09T15:12:53.1795088-06:00)
 - [x] Step 80: Remove nested AI_example folder and tracked artifacts from merge (start: 2026-01-09T15:14:02.1605085-06:00, end: 2026-01-09T15:14:02.1605085-06:00)
 - [x] Step 81: Commit cleanup and push main to GitHub (start: 2026-01-09T15:14:26.7469238-06:00, end: 2026-01-09T15:14:26.7469238-06:00)
+- [x] Step 82: Add branch-first git push workflow to README (start: 2026-01-09T15:19:48.9416766-06:00, end: 2026-01-09T15:19:48.9416766-06:00)
+- [x] Step 83: Make README git workflow section more beginner-friendly (start: 2026-01-09T15:23:44.8099792-06:00, end: 2026-01-09T15:23:44.8099792-06:00)
