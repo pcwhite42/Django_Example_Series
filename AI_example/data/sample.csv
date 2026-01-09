@@ -1,7 +1,0 @@
-# FILE PURPOSE: Sample dataset to visualize in the dashboard; pandas ignores this comment line.
-# CAME FROM: dashboard/views.py -> home() reads this file with pandas.read_csv.
-month,visitors,signups,revenue
-January,120,30,500.50
-February,150,45,610.00
-March,180,60,720.75
-April,160,50,680.00

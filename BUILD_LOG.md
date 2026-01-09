@@ -106,3 +106,6 @@ Referenced By:
 - [x] Step 75: Update doc reference script to comment headers by file type and note script path in README (start: 2026-01-09T14:17:03.7164360-06:00, end: 2026-01-09T14:17:03.7164360-06:00)
 - [x] Step 76: Clarify template inheritance usage in README team assets section (start: 2026-01-09T14:27:05.6886267-06:00, end: 2026-01-09T14:27:05.6886267-06:00)
 - [x] Step 77: Initialize git repo, set main branch, and add GitHub remote (start: 2026-01-09T14:56:10.1244852-06:00, end: 2026-01-09T14:56:10.1244852-06:00)
+- [x] Step 78: Set local git author info, stage files, and attempt initial push (remote had existing history) (start: 2026-01-09T15:11:53.8529759-06:00, end: 2026-01-09T15:11:53.8529759-06:00)
+- [x] Step 79: Merge remote main history to resolve non-fast-forward (start: 2026-01-09T15:12:53.1795088-06:00, end: 2026-01-09T15:12:53.1795088-06:00)
+- [x] Step 80: Remove nested AI_example folder and tracked artifacts from merge (start: 2026-01-09T15:14:02.1605085-06:00, end: 2026-01-09T15:14:02.1605085-06:00)
