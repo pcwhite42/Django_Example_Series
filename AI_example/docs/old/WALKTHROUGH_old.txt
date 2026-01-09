@@ -1,0 +1,129 @@
+<!-- REF-HEADER-START -->
+Points To:
+Referenced By:
+<!-- REF-HEADER-END -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FILE PURPOSE: Step-by-step walkthrough for the beginner Django + pandas tutorial project.
+CAME FROM: README.md -> Learn more section points here for the detailed narrative.
+NEXT: When you're comfortable, run `python manage.py runserver` and explore /, /about, and /admin.
+
+START HERE (TL;DR)
+- If you just cloned the repo, open `docs/ONBOARDING_PORTAL.md` for the high-level roadmap.
+- Come back here when you want a deeper dive into how each file works together.
+- Keep one terminal pointed at the project folder (where `manage.py` lives) so you can run commands as you read (after setting `DJANGO_SECRET_KEY`).
+- Keep `dashboard/views.py`, `dashboard/urls.py`, and `dashboard/templates/dashboard/index.html` open side-by-side while reading so you can follow the breadcrumbs in real time.
+
+HOW TO USE THIS GUIDE
+- Skim the project map to learn what each file does and how often you'll edit it.
+- Follow the breadcrumb paths to see how requests travel from URLs to views to templates.
+- Use the `/about` recipe to practice adding a brand-new page.
+- Pair this walkthrough with `docs/BEGINNER_EXAMPLES.md` or `docs/TUTORIAL_SERIES.md` when you are ready to code along.
+
+PROJECT MAP (FILE PURPOSE + EDIT FREQUENCY)
+- manage.py - Rare edits. Launches Django commands and sets `DJANGO_SETTINGS_MODULE`.
+- beginner_dashboard/__init__.py - Rare. Makes the folder a Python package.
+- beginner_dashboard/settings.py - Rare. Configure apps, middleware, security. Reads `DJANGO_SECRET_KEY` from your environment; update `ALLOWED_HOSTS` before deploying.
+- beginner_dashboard/urls.py - Occasional. Routes project-level URLs into app routers like `dashboard/urls.py`.
+- beginner_dashboard/asgi.py & wsgi.py - Rare. Entry points for async/sync servers.
+- dashboard/apps.py - Rare. AppConfig metadata so Django can list the app.
+- dashboard/models.py - Occasional. Holds ORM tables like `ExampleRecord`; fresh clones already include the initial migration, so run `makemigrations` and `migrate` only after you change the models.
+- dashboard/admin.py - Occasional. Registers models so they appear in `/admin`; see ADMIN_ONBOARDING.md for commands.
+- dashboard/views.py - Frequent. Python functions load data (pandas) and send context to templates. Breadcrumbs point you to URLs and templates.
+- dashboard/urls.py - Frequent when adding new pages. Maps paths (`""`, `"about/"`) to view functions.
+- dashboard/templates/dashboard/index.html - Frequent for layout tweaks. Renders pandas tables with the `|safe` filter - only safe for trusted data.
+- dashboard/templates/dashboard/about.html - Occasional. Example of a static teaching page with navigation back home.
+- dashboard/static/dashboard/styles.css - Occasional. Holds light styling for tables and layout.
+- data/sample.csv - Occasional. Demo dataset pandas ingests; comment lines explain the format.
+- README.md - Frequent when sharing the project. Checklists for environment setup.
+- ADMIN_ONBOARDING.md - Occasional. Exact commands to prepare the admin site.
+- .env.example - Rare. Documents environment variables and platform-specific export commands.
+- WALKTHROUGH.txt - This file. Revisit whenever you add routes or onboard new teammates.
+
+FOLLOW THE BREADCRUMBS (VIEW -> URL -> TEMPLATE)
+1. Start in `dashboard/views.py`:
+   - `home()` reads `data/sample.csv`, builds HTML with `pandas.DataFrame.to_html(index=False)`, warns about trusting inputs, and prepares context variables.
+   - Inline `# NEXT` comments point you to the URL configuration and template.
+2. Hop to `dashboard/urls.py`:
+   - `path("", views.home, name="home")` routes `/` to the view.
+   - Comments remind you that `beginner_dashboard/urls.py` includes this module at the project root.
+3. Open `dashboard/templates/dashboard/index.html`:
+   - Uses the context keys (`table_html`, `summary_html`, `csv_name`, `row_count`).
+   - The `{% url 'dashboard:about' %}` link shows how to connect to other routes.
+4. Reverse the trail like Django does:
+   - User hits `/`.
+   - URLconf resolves to `views.home`.
+   - View returns the `index.html` template populated with pandas-rendered tables.
+
+RECIPE: ADDING THE `/about` PAGE (YOU JUST SAW IT LIVE)
+1. View layer - `dashboard/views.py`
+   - Add an `about()` function with comments:
+     ```
+     def about(request):
+         # CAME FROM: dashboard/urls.py -> about route.
+         # NEXT: dashboard/templates/dashboard/about.html.
+         return render(request, "dashboard/about.html", {"project_name": "Beginner Django Dashboard"})
+     ```
+2. Template layer - `dashboard/templates/dashboard/about.html`
+   - Create the HTML file with `{# FILE PURPOSE ... #}` comments and a link back home.
+3. URL layer - `dashboard/urls.py`
+   - Append `path("about/", views.about, name="about")`.
+   - Keep the breadcrumb comment showing the route -> view -> template flow.
+4. Navigation - `dashboard/templates/dashboard/index.html`
+   - Add `<a href="{% url 'dashboard:about' %}">About this tutorial</a>` so visitors can reach the new page.
+5. Verify
+   - Restart the dev server (or let auto-reload handle it).
+   - Browse to `http://127.0.0.1:8000/about/` and check for your content.
+
+WHEN TO USE THE ORM VS PANDAS
+- Use the ORM (`dashboard/models.py`) for structured, frequently updated data that belongs in a database. `ExampleRecord` shows where your tables live, and migrations migrate schema changes.
+- Use pandas in views when you need ad-hoc analytics from CSVs or computed datasets. `home()` loads `data/sample.csv`, summarizes it, and renders HTML tables quickly.
+- Hybrid approach: import CSV data into the ORM when it becomes permanent, but keep pandas around for calculated dashboards or one-off reports.
+- Admin site helps you inspect ORM models instantly; run `createsuperuser`, log into `/admin`, and explore **Example Records**.
+
+PRACTICE LADDER (WHAT TO DO AFTER THIS WALKTHROUGH)
+- Step 1: Pick a quick win from `docs/BEGINNER_EXAMPLES.md` (e.g., add a filter drop-down).
+- Step 2: Revisit the relevant sections above and verify you understand the flow (URL -> view -> template).
+- Step 3: Graduate to `docs/TUTORIAL_SERIES.md` Tutorial 2 or 3 to combine multiple techniques.
+- Step 4: When you feel ready, expand into the intermediate guides to import data into the ORM or build multi-page dashboards.
+
+HOW MIGRATIONS ARE GENERATED (QUICK RECAP)
+- Edit models in `dashboard/models.py` - for example, add a new field to `ExampleRecord`.
+- Run `python manage.py makemigrations dashboard` to let Django compare models to existing migrations and write a new file inside `dashboard/migrations/`.
+- Peek at the generated file (it starts with comments describing how it was created) to understand the operations Django recorded.
+- Apply the changes with `python manage.py migrate` so the SQLite database structure matches your updated models.
+- If you need to start over locally, delete `db.sqlite3`, rerun `python manage.py migrate`, and Django will replay every migration from scratch.
+
+SECURITY 101 FOR THIS PROJECT
+- Secrets: `beginner_dashboard/settings.py` reads `DJANGO_SECRET_KEY` from the environment. Copy `.env.example` and never commit real keys.
+- Debug mode: Leave `DEBUG=True` only for local learning. Switch to `False` before deploying to hide detailed errors.
+- Hosts: `ALLOWED_HOSTS = ["127.0.0.1", "localhost"]` keeps the tutorial locked to local traffic. Add deployment domains (and set `CSRF_TRUSTED_ORIGINS`) when hosting.
+- CSV inputs: Treat uploaded or user-provided CSVs as untrusted. Validate, sanitize, or strip HTML before passing to `to_html()` or the `|safe` filter to prevent XSS.
+- Admin accounts: Use strong passwords, unique usernames, and remember that superusers can modify everything.
+
+NEXT STEPS
+- Add your own CSV to `data/`, update `dashboard/views.py`, and refresh the template to explore different datasets.
+- Define real models in `dashboard/models.py`, then run `python manage.py makemigrations dashboard` followed by `python manage.py migrate` - it is normal to see `No changes detected` until you edit the models.
+- Consult README.md whenever you forget the exact commands for setup or deployment readiness.

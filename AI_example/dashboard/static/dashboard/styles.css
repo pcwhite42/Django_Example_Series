@@ -1,0 +1,48 @@
+/* FILE PURPOSE: Styles the dashboard to keep the CSV table readable and friendly for beginners. */
+/* # CAME FROM: dashboard/templates/dashboard/index.html -> <link rel="stylesheet"...> */
+
+/* STYLE IMPORTANCE: Reset default font so the page looks consistent across browsers. */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0 1.5rem;
+  background-color: #f7f9fb;
+  color: #1f2933;
+}
+
+/* SECTION: headers get spacing and alignment for readability. */
+header,
+footer {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/* SECTION: data table styling highlights rows and columns. */
+table.data-table,
+table.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 6px rgba(31, 41, 51, 0.12);
+}
+
+/* COMMENT: table headers stand out with background color. */
+table.data-table thead th,
+table.summary-table thead th {
+  background-color: #243b53;
+  color: #ffffff;
+  padding: 0.75rem;
+}
+
+/* COMMENT: body cells stay readable with alternating row colors. */
+table.data-table tbody tr:nth-child(even),
+table.summary-table tbody tr:nth-child(even) {
+  background-color: #e4edf5;
+}
+
+/* COMMENT: apply shared padding to all table cells for consistent spacing. */
+table.data-table td,
+table.summary-table td {
+  padding: 0.75rem;
+  text-align: center;
+}
