@@ -117,3 +117,8 @@ Referenced By:
 - [x] Step 82: Add branch-first git push workflow to README (start: 2026-01-09T15:19:48.9416766-06:00, end: 2026-01-09T15:19:48.9416766-06:00)
 - [x] Step 83: Make README git workflow section more beginner-friendly (start: 2026-01-09T15:23:44.8099792-06:00, end: 2026-01-09T15:23:44.8099792-06:00)
 - [x] Step 84: Rename onboarding guide to GettingStartedHowTo and add lightweight README front page (start: 2026-01-09T15:31:52.9272531-06:00, end: 2026-01-09T15:31:52.9272531-06:00)
+- [x] Step 85: Add dark mode toggle with persistent preference across pages (start: 2026-01-10T14:15:20.0311968-06:00, end: 2026-01-10T14:15:20.0311968-06:00)
+- [x] Step 86: Fix dark mode styling via CSS variables and shared theme script (start: 2026-01-10T14:19:39.6806628-06:00, end: 2026-01-10T14:19:39.6806628-06:00)
+- [x] Step 87: Force theme variables update in JS to fix dark mode styling (start: 2026-01-10T14:25:01.0164738-06:00, end: 2026-01-10T14:25:01.0164738-06:00)
+- [x] Step 88: Add cache-busting query strings for theme assets (start: 2026-01-10T14:28:26.8118049-06:00, end: 2026-01-10T14:28:26.8118049-06:00)
+- [x] Step 89: Commit and push dark mode updates plus recent tutorial edits (start: 2026-01-10T15:27:16.3160133-06:00, end: 2026-01-10T15:27:16.3160133-06:00)

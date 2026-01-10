@@ -23,8 +23,6 @@ Referenced By:
 <!-- REF-HEADER-END -->
 
 
-
-
 # Beginner Start Here (Single Walkthrough)
 # FILE PURPOSE: One-stop guide for brand-new learners to set up, run, and explore this Django + pandas tutorial.
 # NEXT: Follow the steps below in order. 

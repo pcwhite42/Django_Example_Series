@@ -22,4 +22,7 @@ urlpatterns = [
     # COMMENT: path("about/", ...) maps requests for "/about" to the about view.
     # NEXT: open dashboard/templates/dashboard/about.html to see the paired template.
     path("about/", views.about, name="about"),
+
+    # Insert Example 4 work here:
+    
 ]

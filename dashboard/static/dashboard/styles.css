@@ -2,12 +2,34 @@
 /* # CAME FROM: dashboard/templates/dashboard/index.html -> <link rel="stylesheet"...> */
 
 /* STYLE IMPORTANCE: Reset default font so the page looks consistent across browsers. */
+:root {
+  --bg-color: #f7f9fb;
+  --text-color: #1f2933;
+  --link-color: #0b5fa5;
+  --table-head-bg: #243b53;
+  --table-even-row: #e4edf5;
+  --button-bg: #ffffff;
+  --button-text: #1f2933;
+  --button-border: #94a3b8;
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --text-color: #e2e8f0;
+  --link-color: #93c5fd;
+  --table-head-bg: #0b1220;
+  --table-even-row: #1f2937;
+  --button-bg: #1e293b;
+  --button-text: #e2e8f0;
+  --button-border: #64748b;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0 1.5rem;
-  background-color: #f7f9fb;
-  color: #1f2933;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 /* SECTION: headers get spacing and alignment for readability. */
@@ -15,6 +37,27 @@ header,
 footer {
   text-align: center;
   margin: 2rem 0;
+}
+
+/* SECTION: keep navigation links readable in both themes. */
+nav a {
+  color: var(--link-color);
+}
+
+/* SECTION: theme toggle button */
+.theme-toggle {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.theme-toggle button {
+  border: 1px solid var(--button-border);
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
 }
 
 /* SECTION: data table styling highlights rows and columns. */
@@ -29,7 +72,7 @@ table.summary-table {
 /* COMMENT: table headers stand out with background color. */
 table.data-table thead th,
 table.summary-table thead th {
-  background-color: #243b53;
+  background-color: var(--table-head-bg);
   color: #ffffff;
   padding: 0.75rem;
 }
@@ -37,7 +80,7 @@ table.summary-table thead th {
 /* COMMENT: body cells stay readable with alternating row colors. */
 table.data-table tbody tr:nth-child(even),
 table.summary-table tbody tr:nth-child(even) {
-  background-color: #e4edf5;
+  background-color: var(--table-even-row);
 }
 
 /* COMMENT: apply shared padding to all table cells for consistent spacing. */

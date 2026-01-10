@@ -12,12 +12,18 @@ from django.conf import settings
 # IMPORT: render loads a template, fills it with context data, and returns an HTTP response.
 from django.shortcuts import render
 
+# Insert Example 4 IMPORT here:
+
+
+# Insert Example 4 Function here:
+
 
 # FUNCTION: home receives HTTP requests for "/" and returns the dashboard page.
 # WHY: This is our main teaching view that reads a CSV, summarizes data, and renders HTML.
 def home(request):
     # COMMENT: Locate the sample CSV next to the project so the tutorial stays portable.
     csv_path = Path(settings.BASE_DIR) / "data" / "sample.csv"
+
     # NEXT: open data/sample.csv to inspect the raw values pandas ingests.
 
     # COMMENT: Read the CSV into a DataFrame (pandas structure optimized for tabular data).
@@ -27,6 +33,11 @@ def home(request):
     data_frame = pd.read_csv(csv_path, comment="#")
     # SECURITY REMINDER: If you ever accept user-supplied CSVs, validate and sanitize before rendering to avoid XSS payloads.
     # DEBUG TIP: Uncomment `print(data_frame.head())` while developing to inspect the first rows, then remove or comment it out before committing.
+    
+    # Insert Example 1 work here
+    # This is before the table_html is sent the data_frame, allowing the table changes to be rendered on the page.
+    
+    # Insert Example 3 work here
 
     # COMMENT: Generate quick summary statistics (count, mean, min, max) for numeric columns.
     # PERFORMANCE NOTE: describe() is vectorized, but avoid calling it repeatedly in hot paths; cache results if needed.
@@ -49,7 +60,10 @@ def home(request):
         "table_html": table_html,  # Template will embed this raw HTML table.
         "summary_html": summary_html,  # Template will embed summary stats.
         "csv_name": csv_path.name,  # Helps learners see which file is loaded.
-        "row_count": len(data_frame),  # Quick metric for text callouts.
+        "row_count": len(data_frame),
+
+        #Insert Example 2 "months" context here:
+
     }
 
     # NEXT: open beginner_dashboard/urls.py to see how this view is routed into the site root.
